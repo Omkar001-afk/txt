@@ -45,21 +45,21 @@ const Text = (props) => {
       </div>
       <button
         type="button"
-        className="btn btn-primary mx-1"
+        className="btn btn-primary mx-1 my-1"
         onClick={CapsHandler}
       >
         Convert to UpperCase
       </button>
       <button
         type="button"
-        className="btn btn-primary mx-1"
+        className="btn btn-primary mx-1 my-1"
         onClick={LowerHandler}
       >
         Convert to LowerCase
       </button>
       <button
         type="button"
-        className="btn btn-primary mx-1"
+        className="btn btn-primary mx-1 my-1"
         onClick={spaceHandler}
       >
         Check no of Spaces
@@ -67,8 +67,13 @@ const Text = (props) => {
       <div className="container my-2">
         <h2>Text Summary</h2>
         <p>
-          {text.length} no of character, {text.split(" ").length - 1} no of
-          words, no of sentense: {text.split(".").length - 1}
+          {text.length} no of character
+          {
+            text.split(" ").filter((el) => {
+              return el.length !== 0;
+            }).length
+          }
+          no of words, no of sentense: {text.split(".").length - 1}
         </p>
         <h2>Preview</h2>
         <p>no of Spaces are: {space}</p>
